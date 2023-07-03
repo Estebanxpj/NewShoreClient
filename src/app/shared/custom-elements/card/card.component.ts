@@ -7,8 +7,7 @@ import { IJourney } from '../../interfaces/journey.interface';
   styleUrls: ['./card.component.css'],
 })
 export class CardComponent {
-  @Input() headerTitle = 'Flight information';
+  @Input() headerTitle = 'Informacion del Viaje';
   @Input() journey!: IJourney;
-  @Input() textButton = 'View More';
-  @Input() isUSD = false;
+  @Input() currencySelected = 'USD';
 }

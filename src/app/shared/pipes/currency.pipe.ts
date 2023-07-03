@@ -1,3 +1,4 @@
+import { CurrencyService } from 'src/app/core/services/currencyService';
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
@@ -5,18 +6,17 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class CurrencyPipe implements PipeTransform {
 
-  transform(value: number, isUSD: boolean): unknown {
+  transform(value: number, currencySelected: string): unknown {
 
-    let en =  isUSD ? 'en-US' : 'en-CO';
+    const currencyResult = CurrencyService.getCurrency(currencySelected);
 
-    var formatter = new Intl.NumberFormat(en, {
+    var formatter = new Intl.NumberFormat(currencyResult.format, {
       style: 'currency',
-      currency: isUSD ? 'USD' : 'COL'
+      currency: currencyResult.currency
     });
 
-    value = isUSD ? (value * 1) : (value * 4000);
+    value = value * currencyResult.amount;
     
     return formatter.format(value);
   }
-
 }

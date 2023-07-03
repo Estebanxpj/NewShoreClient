@@ -11,7 +11,7 @@ import { IRoute } from 'src/app/shared/interfaces/route.interface';
 export class JourneyComponent {
   public listOrigin: Array<string> = [];
   public listDestination: Array<string> = [];
-  public isUSD = true;
+  public currencySelected = "USD";
   public journey!: IJourney;
 
   constructor(private readonly flightService: FlightService) {}

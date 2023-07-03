@@ -1,6 +1,6 @@
 (NewShoreClient)
 
-############# Pasos para ejecutar el Cliente (FrondEnd de la solucion) ##################
+############# Pasos para ejecutar el Cliente (FrondEnt de la solucion) ##################
 
 1. Tener Intalado Node y Angular en sus versiones mas reientes.
 
@@ -10,7 +10,7 @@
 
 4. Abrir la solucion e ir a la ruta "src/enviroments/enviroments.ts" y abrir el archivo.
 
-5. Agregar en la variable "base_url" la URL del proyecto "NewShoreAirApi" (BackEnd de la solucion) con la que el api se desplego en el localhost de su maquina. En mi caso: "https://localhost:7262". Por ultimo gurdamos el archivo
+5. Agregar en la variable "base_url" la URL del proyecto "NewShoreAirApi" (BackEnt de la solucion) con la que el api se desplego en el localhost de su maquina. En mi caso: "https://localhost:7262". Por ultimo gurdamos el archivo
 
 6. Abrir una terminar de comandos.
 
