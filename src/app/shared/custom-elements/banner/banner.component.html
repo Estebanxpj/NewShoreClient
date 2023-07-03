@@ -1,0 +1,5 @@
+<ul *ngIf="showCoincidences" class="list-group">
+    <li *ngFor="let coincidence of listDestinationShow" class="list-group-item list-group-item-action">
+        <a class="nav-link" (click)="selectCoincidence(coincidence)">{{ coincidence }}</a>
+    </li>
+</ul>

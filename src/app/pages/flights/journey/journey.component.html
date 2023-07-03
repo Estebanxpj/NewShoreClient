@@ -1,0 +1,35 @@
+<div class="row container mt-4">
+    <div class="col center">
+        <div class="row" *ngIf="listOrigin.length > 0">
+            <h2>Prueba ingresando un origen y un destino</h2>
+            <div mt-2>
+                <app-search-input 
+                    (goToSearch)="search($event)"
+                    [listOrigin]="listOrigin"
+                    [listDestination]="listDestination">
+                </app-search-input>
+            </div>
+        </div>
+        <div class="row" *ngIf="listOrigin.length === 0">
+            <h5>Cargar</h5>
+            <app-alert textMsg="Services are currently down - please check the api path"></app-alert>
+            <app-button textValue="Recargar" mt-4 (onSubmit)="searchFlightsRoutes()"></app-button>
+        </div>
+    </div>
+</div>
+<hr>
+<div class="container mt-4" *ngIf="journey">
+    <div class="row">
+        <div class="col-md-3">
+            <app-button textValue="USD" class="btn btn-primary" (onSubmit)="isUSD = true"></app-button>
+            <br>
+            <br>
+            <app-button textValue="COL" class="btn btn-primary" (onSubmit)="isUSD = false"></app-button>    
+        </div>
+        <div class="col-md-9">
+            <div class="d-flex justify-content-center">
+                <app-card [journey]="journey" [isUSD]="isUSD"></app-card>
+            </div>
+        </div>
+    </div>
+</div>
